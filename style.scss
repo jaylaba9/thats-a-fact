@@ -1,3 +1,13 @@
+/* ====== COLORS ====== */
+$clr-background: linear-gradient(
+  90deg,
+  rgba(21, 94, 117, 1) 70%,
+  rgba(17, 94, 89, 1) 100%
+);
+$clr-text: #ecfeff;
+$clr-secondary: #0e7490;
+$clr-thirdary: #06b6d4;
+
 /* ====== CSS RESET ====== */
 /*
   1. Use a more-intuitive box-sizing model.
@@ -66,6 +76,16 @@ h6 {
 body {
   font-size: 1rem;
   font-family: 'Sono', sans-serif;
+
+  background: $clr-background;
+  color: $clr-text;
+  padding: 3rem 4rem;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 2rem 2.5rem;
+  }
 }
 
 h1 {
@@ -74,10 +94,295 @@ h1 {
   font-family: 'Coiny', sans-serif;
 }
 
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+#root {
+  margin: 2.5rem auto 0 auto;
+  max-width: 1500px;
+}
+
+/* ====== UTILITY CLASSES ====== */
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+/* ====== REUSABLES ====== */
+
+//////// buttons ////////
+.btn {
+  cursor: pointer;
+  border: none;
+  font-family: 'Coiny', sans-serif;
+  color: inherit;
+  text-transform: uppercase;
+  line-height: 1;
+  background-image: linear-gradient(135deg, #ef4444 30%, #8b5cf6 100%);
+  font-size: 1.125rem;
+  padding: 0.75rem 1rem 0.5rem;
+  border-radius: 3rem;
+  transition: 0.5s;
+}
+
+.btn-large {
+  font-size: 1.375rem;
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+@media (max-width: 560px) {
+  .btn-large {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.25rem 0.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+.btn-all-categories {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+}
+
+.btn:hover {
+  transform: scale(110%) rotate(-2deg);
+}
+
+.vote-buttons button {
+  cursor: pointer;
+  border: none;
+  background-color: $clr-thirdary;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2rem;
+  font-size: 1.125rem;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.vote-buttons button:hover {
+  background-color: #083344;
+}
+
+/* ====== APP STYLING ====== */
+
+///////////////////
+// header
+///////////////////
+.header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  .logo {
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      width: 4.25rem;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    .logo {
+      img {
+        width: 54px;
+      }
+    }
+  }
+}
+
+///////////////////
+// fact form
+///////////////////
+.fact-form {
+  align-items: center;
+  gap: 1rem;
+
+  background: $clr-secondary;
+  padding: 1rem 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem;
+
+  input,
+  select {
+    width: 230px;
+    background-color: $clr-thirdary;
+    border: none;
+    border-radius: 2rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem;
+    font-size: 1.125rem;
+  }
+
+  input::placeholder {
+    color: #67e8f9;
+  }
+
+  input:first-child {
+    flex-grow: 1;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2rem 4rem;
+
+    input,
+    select {
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .fact-form {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .fact-form {
+    input,
+    select {
+      padding: 0.75rem;
+    }
+  }
+}
+
+///////////////////
+// main content
+///////////////////
+.main-content {
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+
+  //////// categories ////////
+  .categories {
+    .category {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  //////// facts ////////
+  .section__facts {
+    .facts-list {
+      .fact {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        font-size: 1.25rem;
+        background: $clr-secondary;
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+
+        .source:link,
+        .source:visited {
+          // color: #22d3ee;
+          color: $clr-thirdary;
+          transition: 0.5s;
+        }
+
+        .source:hover,
+        .source:active {
+          color: #083344;
+        }
+
+        .tag {
+          font-family: 'Coiny', sans-serif;
+          padding: 0.125rem 0.5rem 0;
+          border-radius: 2rem;
+          font-size: 1rem;
+        }
+
+        .vote-buttons {
+          gap: 0.5rem;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    .section__facts {
+      .facts-list {
+        .fact {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .main-content {
+    .section__facts {
+      .facts-list {
+        .fact {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
 }

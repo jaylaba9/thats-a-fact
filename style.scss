@@ -123,6 +123,10 @@ a {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ====== REUSABLES ====== */
 
 //////// buttons ////////
@@ -348,6 +352,7 @@ a {
         .vote-buttons {
           gap: 0.5rem;
           flex-shrink: 0;
+          margin-left: auto;
         }
       }
     }

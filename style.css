@@ -117,6 +117,10 @@ a {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ====== REUSABLES ====== */
 .btn {
   cursor: pointer;
@@ -299,6 +303,7 @@ a {
 .main-content .section__facts .facts-list .fact .vote-buttons {
   gap: 0.5rem;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 @media (max-width: 1200px) {

@@ -285,6 +285,9 @@ a {
   margin-bottom: 1rem;
   border-radius: 1rem;
 }
+.main-content .section__facts .facts-list .fact .source {
+  margin-left: 1rem;
+}
 .main-content .section__facts .facts-list .fact .source:link,
 .main-content .section__facts .facts-list .fact .source:visited {
   color: #06b6d4;

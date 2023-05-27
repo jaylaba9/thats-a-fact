@@ -181,6 +181,10 @@ a {
   background-color: #083344;
 }
 
+.vote-buttons button:disabled {
+  background-color: #0e7490;
+}
+
 /* ====== APP STYLING ====== */
 .header {
   justify-content: space-between;
@@ -308,6 +312,18 @@ a {
   flex-shrink: 0;
   margin-left: auto;
 }
+.main-content .section__facts .facts-list .fact .disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.main-content .message {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+}
 
 @media (max-width: 1200px) {
   .main-content .section__facts .facts-list .fact {
@@ -320,6 +336,14 @@ a {
   .main-content {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+}
+@media (min-width: 801px) {
+  .main-content {
+    height: calc(100vh - 3rem - 2.5rem - 68px - 2.5rem);
+  }
+  .main-content .section__facts {
+    overflow-y: scroll;
   }
 }
 @media (max-width: 560px) {

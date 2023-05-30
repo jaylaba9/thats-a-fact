@@ -2,6 +2,8 @@
 
 Fully responsive web application that is made for users to share interesting facts with their sources from various categories.
 
+Preview available at [That's a fact!](https://jaylaba9-thatsafact.netlify.app/)
+
 ## Functionalities
 - Displaying all facts from database
 - Filtering by categories
